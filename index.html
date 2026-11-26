@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yy57777官网_视频品牌与社区动态_yy57777最新内容导航</title>
+  <meta name="description" content="yy57777官网是视频品牌与社区内容聚合入口，提供最新更新、精选内容、分类导航与深度解析，适合关注视频社区动态与内容趋势的用户浏览。">
+  <meta name="keywords" content="视频社区,内容更新,精选推荐,分类导航,深度解析">
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --bg-soft: #111827;
+      --panel: #151e2f;
+      --panel-2: #1a2540;
+      --border: #22304d;
+      --text: #e8edf5;
+      --text-soft: #9aa9c4;
+      --text-mute: #6b7a99;
+      --primary: #2f7cf6;
+      --primary-soft: #1e4fa8;
+      --accent: #f5a623;
+      --accent-soft: #ffcf6b;
+      --green: #2ecc8f;
+      --red: #f2545b;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 8px 28px rgba(0, 0, 0, .35);
+      --maxw: 1320px;
+      --announce-h: 40px;
+      --header-h: 64px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--announce-h) + var(--header-h) + 16px);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== 吸顶公告条 ===== */
+    .announce {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      height: var(--announce-h);
+      background: linear-gradient(90deg, #102a5c, #1a3d7a 50%, #102a5c);
+      border-bottom: 1px solid #2a4a86;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .announce .wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: #cfe0ff;
+    }
+    .announce .dot {
+      flex: none;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(245, 166, 35, .25);
+    }
+    .announce strong { color: #fff; }
+    .announce .announce-link {
+      margin-left: auto;
+      flex: none;
+      color: var(--accent-soft);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .announce .announce-link:hover { text-decoration: underline; }
+
+    /* ===== 吸顶页头 ===== */
+    .site-header {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 55;
+      height: var(--header-h);
+      background: rgba(10, 14, 23, .92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: none;
+    }
+    .brand-mark {
+      width: 34px; height: 34px;
+      flex: none;
+    }
+    .brand-name {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      color: #fff;
+    }
+    .brand-name em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      flex: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--text-soft);
+      border-radius: var(--radius-sm);
+      transition: background .2s, color .2s;
+      white-space: nowrap;
+    }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--panel-2);
+      color: #fff;
+      outline: none;
+    }
+    .main-nav a:focus-visible { box-shadow: 0 0 0 2px var(--primary); }
+
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: none;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 6px 5px 14px;
+    }
+    .search-box input {
+      width: 150px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 13px;
+    }
+    .search-box input::placeholder { color: var(--text-mute); }
+    .search-box button {
+      border: none;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: background .2s;
+    }
+    .search-box button:hover { background: #4a90ff; }
+    .search-box button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: #4a90ff; transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--text-soft);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      transition: border-color .2s, color .2s;
+      cursor: pointer;
+    }
+    .btn-ghost:hover { border-color: var(--primary); color: #fff; }
+
+    /* ===== 首屏 ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 400px at 15% -10%, rgba(47, 124, 246, .28), transparent 70%),
+        radial-gradient(700px 360px at 90% 0%, rgba(245, 166, 35, .14), transparent 70%),
+        var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 48px;
+      align-items: center;
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--accent-soft);
+      background: rgba(245, 166, 35, .1);
+      border: 1px solid rgba(245, 166, 35, .3);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      letter-spacing: .5px;
+    }
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(30px, 4.4vw, 46px);
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-desc {
+      max-width: 560px;
+      color: var(--text-soft);
+      font-size: 15.5px;
+      margin: 0 0 26px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .hero-stats div { min-width: 80px; }
+    .hero-stats b {
+      display: block;
+      font-size: 22px;
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .hero-stats span {
+      font-size: 12.5px;
+      color: var(--text-mute);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      filter: drop-shadow(0 20px 50px rgba(47, 124, 246, .25));
+    }
+
+    /* ===== 主体三栏门户 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 176px minmax(0, 1fr) 248px;
+      gap: 32px;
+      padding: 40px 0 0;
+    }
+
+    .channel-nav {
+      position: sticky;
+      top: calc(var(--announce-h) + var(--header-h) + 24px);
+      align-self: start;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 12px;
+    }
+    .channel-nav h2 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin: 0 8px 12px;
+      font-weight: 700;
+    }
+    .channel-nav ul { list-style: none; margin: 0; padding: 0; }
+    .channel-nav li + li { margin-top: 2px; }
+    .channel-nav a {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      color: var(--text-soft);
+      transition: background .2s, color .2s;
+    }
+    .channel-nav a:hover,
+    .channel-nav a:focus-visible {
+      background: var(--panel-2);
+      color: #fff;
+      outline: none;
+    }
+    .channel-nav a:focus-visible { box-shadow: 0 0 0 2px var(--primary); }
+    .channel-nav a .cn-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex: none;
+    }
+    .channel-nav a .cn-count {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+
+    .main-col { min-width: 0; }
+    .side-col { min-width: 0; }
+
+    /* 板块通用 */
+    .section { margin-bottom: 48px; scroll-margin-top: 120px; }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .3px;
+    }
+    .section-head h2 small {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-mute);
+      letter-spacing: 1px;
+    }
+    .section-head .more {
+      font-size: 13px;
+      color: var(--primary);
+      white-space: nowrap;
+      flex: none;
+    }
+    .section-head .more:hover { text-decoration: underline; }
+
+    .section-intro {
+      color: var(--text-soft);
+      font-size: 14.5px;
+      margin: 0 0 20px;
+      max-width: 860px;
+    }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      color: var(--text-soft);
+      font-size: 14.5px;
+      line-height: 1.9;
+    }
+    .overview-text p { margin: 0 0 12px; }
+    .overview-text p:last-child { margin-bottom: 0; }
+    .overview-text strong { color: var(--accent-soft); font-weight: 600; }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--primary-soft); transform: translateY(-2px); }
+    .card-thumb {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: var(--panel-2);
+    }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .card-thumb .tag-float {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: rgba(10, 14, 23, .82);
+      border: 1px solid rgba(47, 124, 246, .5);
+      color: #cfe0ff;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+    .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+    .card-body h3 {
+      margin: 0 0 8px;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .card-body p {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      font-size: 11.5px;
+      color: var(--text-soft);
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--text-mute);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    .card-meta .hot { color: var(--red); font-weight: 600; }
+    .card-meta .score { color: var(--accent); font-weight: 600; }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: var(--panel-2); }
+    .update-time {
+      flex: none;
+      width: 64px;
+      font-size: 12px;
+      color: var(--text-mute);
+      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .update-body { min-width: 0; }
+    .update-body h3 {
+      margin: 0 0 3px;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .update-body p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .update-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green);
+      background: rgba(46, 204, 143, .1);
+      border: 1px solid rgba(46, 204, 143, .3);
+      padding: 1px 8px;
+      border-radius: 999px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .cat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 14px;
+      transition: border-color .2s, background .2s;
+    }
+    .cat-item:hover { border-color: var(--primary); background: var(--panel-2); }
+    .cat-item .cat-icon {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: rgba(47, 124, 246, .15);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .cat-item strong { font-size: 14px; color: #fff; font-weight: 700; }
+    .cat-item span { font-size: 12px; color: var(--text-mute); }
+
+    /* 深度解析 */
+    .deep-read {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+    }
+    .deep-read h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      margin: 26px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .deep-read h3:first-child { margin-top: 0; }
+    .deep-read p {
+      margin: 0 0 12px;
+      color: var(--text-soft);
+      font-size: 14.5px;
+      line-height: 1.9;
+    }
+    .deep-read ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+      color: var(--text-soft);
+      font-size: 14.5px;
+      line-height: 1.9;
+    }
+    .deep-read li { margin-bottom: 6px; }
+    .deep-read strong { color: var(--accent-soft); font-weight: 600; }
+
+    /* 消费路径 */
+    .path-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .path-step {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      position: relative;
+    }
+    .path-step .step-num {
+      display: inline-grid;
+      place-items: center;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .path-step h3 { margin: 0 0 6px; font-size: 14.5px; color: #fff; }
+    .path-step p { margin: 0; font-size: 13px; color: var(--text-soft); line-height: 1.7; }
+
+    /* FAQ */
+    .faq-list { display: grid; gap: 10px; }
+    .faq-list details {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .faq-list summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: "+";
+      flex: none;
+      width: 20px; height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--panel-2);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform .2s;
+    }
+    .faq-list details[open] summary::after { content: "−"; transform: rotate(180deg); }
+    .faq-list details[open] summary { color: var(--accent-soft); }
+    .faq-list .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 13.5px;
+      color: var(--text-soft);
+      line-height: 1.85;
+      border-top: 1px dashed var(--border);
+      margin-top: -1px;
+      padding-top: 12px;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .comment-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .avatar {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      flex: none;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .comment-head .nick { font-size: 13px; font-weight: 700; color: #fff; }
+    .comment-head .time { font-size: 11.5px; color: var(--text-mute); margin-left: auto; }
+    .comment-card p { margin: 0; font-size: 13px; color: var(--text-soft); line-height: 1.7; }
+
+    /* 资讯 */
+    .news-list { display: grid; gap: 0; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-thumb { flex: none; width: 110px; aspect-ratio: 3/2; border-radius: 8px; overflow: hidden; }
+    .news-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .news-body { min-width: 0; }
+    .news-body .news-date { font-size: 12px; color: var(--text-mute); }
+    .news-body h3 { margin: 2px 0 4px; font-size: 14.5px; font-weight: 700; color: #fff; }
+    .news-body p { margin: 0; font-size: 13px; color: var(--text-soft); line-height: 1.65; }
+
+    /* 相关推荐 */
+    .reco-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .reco-tags a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13.5px;
+      color: var(--text-soft);
+      transition: border-color .2s, color .2s;
+    }
+    .reco-tags a:hover { border-color: var(--accent); color: var(--accent-soft); }
+
+    /* 榜单 */
+    .rank-list { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num {
+      flex: none;
+      width: 22px; height: 22px;
+      display: grid; place-items: center;
+      border-radius: 6px;
+      background: var(--panel-2);
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .rank-item:nth-child(1) .rank-num { background: var(--accent); color: #1a1205; }
+    .rank-item:nth-child(2) .rank-num { background: #b8c4d8; color: #10151f; }
+    .rank-item:nth-child(3) .rank-num { background: #c98a4b; color: #1a1205; }
+    .rank-item .rank-name { font-size: 13.5px; color: #fff; font-weight: 600; }
+    .rank-item .rank-tag { font-size: 11px; color: var(--text-mute); margin-left: auto; flex: none; }
+
+    /* 侧栏 */
+    .side-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .side-box h2 {
+      margin: 0 0 12px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: var(--text-mute);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .side-list { list-style: none; margin: 0; padding: 0; }
+    .side-list li { border-bottom: 1px dashed var(--border); padding: 8px 0; }
+    .side-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .side-list a { font-size: 13.5px; color: var(--text-soft); display: flex; gap: 8px; align-items: baseline; }
+    .side-list a:hover { color: var(--accent-soft); }
+    .side-list .idx { color: var(--text-mute); font-size: 12px; font-weight: 700; flex: none; width: 16px; }
+
+    .side-note {
+      font-size: 12.5px;
+      color: var(--text-mute);
+      line-height: 1.8;
+    }
+    .side-note strong { color: var(--accent-soft); }
+
+    /* 页尾 */
+    .site-footer {
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      background: #080b12;
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 32px;
+      padding: 44px 0 32px;
+    }
+    .footer-brand .brand-name { font-size: 18px; }
+    .footer-brand p {
+      margin: 12px 0 0;
+      font-size: 13px;
+      color: var(--text-mute);
+      line-height: 1.8;
+      max-width: 280px;
+    }
+    .footer-col h3 {
+      font-size: 13px;
+      color: #fff;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: .5px;
+    }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col li + li { margin-top: 7px; }
+    .footer-col a { font-size: 13px; color: var(--text-mute); }
+    .footer-col a:hover { color: var(--accent-soft); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 18px 0 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: var(--text-mute);
+    }
+    .footer-bottom .fb-links { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    /* 搜索无结果 */
+    .no-result {
+      display: none;
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-mute);
+      font-size: 14px;
+      background: var(--panel);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+    }
+    .no-result.show { display: block; }
+
+    /* 响应式 */
+    @media (max-width: 1180px) {
+      .layout { grid-template-columns: 168px minmax(0, 1fr) 220px; gap: 24px; }
+      .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero .wrap { grid-template-columns: 1fr; gap: 32px; padding-top: 40px; padding-bottom: 40px; }
+      .hero-visual { order: -1; max-width: 340px; margin: 0 auto; }
+      .layout { grid-template-columns: minmax(0, 1fr) 240px; gap: 24px; }
+      .channel-nav { display: none; }
+      .main-nav { display: none; }
+      .path-steps { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: minmax(0, 1fr); }
+      .side-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+      .side-box { margin-bottom: 0; }
+      .card-grid, .comment-grid { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .search-box input { width: 100px; }
+    }
+
+    @media (max-width: 740px) {
+      .wrap { padding: 0 16px; }
+      .announce .wrap { font-size: 12px; gap: 8px; }
+      .announce .announce-link { display: none; }
+      .site-header .wrap { gap: 12px; }
+      .header-actions .btn-ghost { display: none; }
+      .search-box { padding-left: 10px; }
+      .search-box input { width: 78px; }
+      .search-box button { padding: 5px 10px; }
+      .hero h1 { font-size: 28px; }
+      .hero-stats { gap: 18px; }
+      .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .side-col { grid-template-columns: 1fr; }
+      .deep-read { padding: 20px 18px; }
+      .update-item { padding: 12px 14px; }
+      .update-time { width: 52px; font-size: 11.5px; }
+      .news-item { flex-direction: column; gap: 10px; }
+      .news-thumb { width: 100%; aspect-ratio: 16/9; }
+      .footer-main { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶公告条 ===== -->
+<div class="announce" role="status" aria-label="站点公告">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <span><strong>11月25日</strong> 新增「深夜放映室」专题 12 条 ·「城市漫游」系列更新至第 9 期</span>
+    <a class="announce-link" href="/#latest">查看更新清单 →</a>
+  </div>
+</div>
+
+<!-- ===== 吸顶页头 ===== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/#" aria-label="yy57777官网首页">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2f7cf6"/>
+            <stop offset="1" stop-color="#f5a623"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#brandGrad)" opacity=".18"/>
+        <rect x="2" y="2" width="36" height="36" rx="10" fill="none" stroke="url(#brandGrad)" stroke-width="1.5"/>
+        <path d="M13 12 L20 20 L13 28" fill="none" stroke="#2f7cf6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 12 L28 20 L21 28" fill="none" stroke="#f5a623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">yy57777<em>官网</em></span>
+    </a>
+
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/#overview">站内概览</a>
+      <a href="/#featured">精选内容</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#categories">分类导航</a>
+      <a href="/#deep-read">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">社区评论</a>
+    </nav>
+
+    <div class="header-actions">
+      <form class="search-box" role="search" id="searchForm" aria-label="站内搜索">
+        <input type="search" id="searchInput" placeholder="搜索内容或分类" aria-label="输入搜索关键词">
+        <button type="submit">查找</button>
+      </form>
+      <a class="btn-primary" href="/#featured">开始浏览</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 首屏 ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-badge">视频品牌 · 社区内容聚合</div>
+      <h1>yy57777<span>官网</span></h1>
+      <p class="hero-desc">
+        聚焦城市影像、深夜短片与创作者访谈的视频内容品牌。每日更新精选片单，聚合社区讨论与专题策划，帮助你在海量视频中快速找到今晚想看的那一部。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#latest">查看今日更新</a>
+        <a class="btn-ghost" href="/#deep-read">阅读深度解析</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1,286</b><span>已收录条目</span></div>
+        <div><b>42</b><span>本周新增</span></div>
+        <div><b>9.2</b><span>社区均分</span></div>
+        <div><b>24h</b><span>内容更新频率</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 360" role="img" aria-label="抽象视频播放界面构图">
+        <defs>
+          <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2f7cf6" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#0f1c38" stop-opacity=".9"/>
+          </linearGradient>
+          <linearGradient id="playGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f5a623"/>
+            <stop offset="1" stop-color="#ff8a3d"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="40" width="360" height="220" rx="18" fill="url(#screenGrad)" opacity=".22" stroke="#2f7cf6" stroke-width="1.2"/>
+        <rect x="30" y="40" width="360" height="220" rx="18" fill="none" stroke="#2f7cf6" stroke-width="1.2" opacity=".6"/>
+        <circle cx="210" cy="150" r="42" fill="#0b1220" opacity=".7"/>
+        <circle cx="210" cy="150" r="42" fill="none" stroke="#2f7cf6" stroke-width="1.5" opacity=".7"/>
+        <path d="M198 130 L198 170 L232 150 Z" fill="url(#playGrad)"/>
+        <rect x="52" y="82" width="86" height="8" rx="4" fill="#2f7cf6" opacity=".55"/>
+        <rect x="52" y="98" width="56" height="6" rx="3" fill="#9aa9c4" opacity=".4"/>
+        <rect x="52" y="222" width="150" height="6" rx="3" fill="#2f7cf6" opacity=".45"/>
+        <rect x="52" y="222" width="92" height="6" rx="3" fill="url(#playGrad)"/>
+        <rect x="52" y="244" width="40" height="5" rx="2.5" fill="#9aa9c4" opacity=".35"/>
+        <rect x="110" y="244" width="40" height="5" rx="2.5" fill="#9aa9c4" opacity=".35"/>
+        <rect x="30" y="290" width="110" height="46" rx="10" fill="#151e2f" stroke="#22304d"/>
+        <rect x="152" y="290" width="110" height="46" rx="10" fill="#151e2f" stroke="#22304d"/>
+        <rect x="274" y="290" width="116" height="46" rx="10" fill="#151e2f" stroke="#22304d"/>
+        <rect x="44" y="304" width="58" height="6" rx="3" fill="#2f7cf6" opacity=".6"/>
+        <rect x="166" y="304" width="58" height="6" rx="3" fill="#f5a623" opacity=".6"/>
+        <rect x="288" y="304" width="58" height="6" rx="3" fill="#2ecc8f" opacity=".6"/>
+        <rect x="44" y="318" width="36" height="5" rx="2.5" fill="#6b7a99" opacity=".5"/>
+        <rect x="166" y="318" width="36" height="5" rx="2.5" fill="#6b7a99" opacity=".5"/>
+        <rect x="288" y="318" width="36" height="5" rx="2.5" fill="#6b7a99" opacity=".5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 主体三栏门户 ===== -->
+<div class="wrap layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-nav" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul>
+      <li><a href="/#featured"><span class="cn-dot"></span>精选内容<span class="cn-count">12</span></a></li>
+      <li><a href="/#latest"><span class="cn-dot"></span>最新更新<span class="cn-count">10</span></a></li>
+      <li><a href="/#categories"><span class="cn-dot"></span>分类导航<span class="cn-count">8</span></a></li>
+      <li><a href="/#deep-read"><span class="cn-dot"></span>深度解析<span class="cn-count">6</span></a></li>
+      <li><a href="/#guide"><span class="cn-dot"></span>观看指南<span class="cn-count">3</span></a></li>
+      <li><a href="/#faq"><span class="cn-dot"></span>常见问题<span class="cn-count">6</span></a></li>
+      <li><a href="/#comments"><span class="cn-dot"></span>社区评论<span class="cn-count">16</span></a></li>
+      <li><a href="/#news"><span class="cn-dot"></span>相关资讯<span class="cn-count">6</span></a></li>
+      <li><a href="/#reco"><span class="cn-dot"></span>相关推荐<span class="cn-count">8</span></a></li>
+      <li><a href="/#rank"><span class="cn-dot"></span>热门榜单<span class="cn-count">10</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col">
+
+    <!-- 1. 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>主题领域概览 <small>OVERVIEW</small></h2>
+      </div>
+      <div class="overview-text">
+        <p>
+          yy57777官网所代表的视频内容生态，围绕<span>城市影像、深夜短片、创作者访谈、系列纪录片</span>与<span>社区共创</span>五个方向展开。当前平台收录的条目以短篇叙事和城市观察为主，单集时长多在 8 至 25 分钟之间，适合在通勤、睡前或周末集中观看。近期新增的「深夜放映室」专题，把目光投向午夜街区与通勤末班车，用低光摄影与现场收音构建出独特的城市呼吸感。
+        </p>
+        <p>
+          如果你刚接触这个内容体系，可以先从<strong>「城市漫游」系列</strong>入手，它用每期 12 分钟的篇幅记录一条街道的清晨到深夜；喜欢强叙事的观众，则更适合<strong>「末班车手记」</strong>与<strong>「天台放映员」</strong>这类带有虚构色彩的短片。平台每周三、周六固定更新，专题策划则按月度节奏推出，社区讨论区在每期上线后会保持 72 小时的高活跃度。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>精选内容推荐 <small>FEATURED</small></h2>
+        <a class="more" href="/#latest">今日更新 →</a>
+      </div>
+      <p class="section-intro">从近期上线的条目中挑出 8 部，涵盖城市漫游、深夜短片与创作者对谈，每部都附有具体的观看理由与社区热度参考。</p>
+      <div class="card-grid" id="featuredGrid">
+        <article class="card" data-search="城市漫游 第九期 老城区 街巷 纪录片">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-city09/400/300" alt="城市漫游第九期老城区街巷封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">城市漫游</span>
+          </div>
+          <div class="card-body">
+            <h3>城市漫游 第九期：老城区的十二时辰</h3>
+            <div class="card-tags"><span class="tag">城市观察</span><span class="tag">纪实</span><span class="tag">12分钟</span></div>
+            <p>跟随三位本地居民记录老城区从早市到夜宵摊的一天，镜头大量停留在修鞋摊与老茶馆，用日常细节替代旁白解说。</p>
+            <div class="card-meta"><span class="hot">热度 9.6</span><span class="score">评分 9.2</span><span>11-25 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="末班车手记 短片 虚构 通勤 深夜">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-lastbus/400/300" alt="末班车手记短片封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">深夜短片</span>
+          </div>
+          <div class="card-body">
+            <h3>末班车手记：最后一班地铁的乘客</h3>
+            <div class="card-tags"><span class="tag">虚构叙事</span><span class="tag">通勤</span><span class="tag">18分钟</span></div>
+            <p>以末班地铁为舞台的三段式短篇，每段聚焦一位乘客的独白。声音设计克制，站台广播与列车进站声构成主要节奏。</p>
+            <div class="card-meta"><span class="hot">热度 9.1</span><span class="score">评分 8.8</span><span>11-24 上线</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="天台放映员 创作者访谈 露天电影">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-rooftop/400/300" alt="天台放映员创作者访谈封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">创作者访谈</span>
+          </div>
+          <div class="card-body">
+            <h3>天台放映员：一个人维护的露天影院</h3>
+            <div class="card-tags"><span class="tag">人物访谈</span><span class="tag">社区</span><span class="tag">22分钟</span></div>
+            <p>记录老居民楼天台上坚持了七年的露天放映，访谈对象是放映员本人与常来的六位邻居，聊片单选择与邻里关系。</p>
+            <div class="card-meta"><span class="hot">热度 8.9</span><span class="score">评分 9.0</span><span>11-22 上线</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="深夜放映室 专题 午夜街区 系列">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-midnight/400/300" alt="深夜放映室专题午夜街区封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">专题策划</span>
+          </div>
+          <div class="card-body">
+            <h3>深夜放映室：午夜街区的十二种声音</h3>
+            <div class="card-tags"><span class="tag">专题合集</span><span class="tag">城市声音</span><span class="tag">系列</span></div>
+            <p>本月专题以声音为线索，把十二段午夜街区录音与十二部短片配对，建议戴耳机按顺序观看，每段 6 至 9 分钟。</p>
+            <div class="card-meta"><span class="hot">热度 9.4</span><span class="score">评分 9.1</span><span>11-25 上线</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="菜市场 早市 声音 纪录片 市井">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-market/400/300" alt="菜市场早市声音纪录片封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">纪实声音</span>
+          </div>
+          <div class="card-body">
+            <h3>菜市场早市：五点三十分的声音地图</h3>
+            <div class="card-tags"><span class="tag">声音纪录</span><span class="tag">市井</span><span class="tag">15分钟</span></div>
+            <p>凌晨五点半进入批发市场，用双耳录音设备记录摊主开摊、搬货、叫卖与早市收尾的全过程，无配乐无旁白。</p>
+            <div class="card-meta"><span class="hot">热度 8.4</span><span class="score">评分 8.7</span><span>11-20 上线</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="夜骑 城市 骑行 短片 路线">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-nightride/400/300" alt="夜骑城市路线短片封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">城市运动</span>
+          </div>
+          <div class="card-body">
+            <h3>夜骑三十公里：沿河路线实拍</h3>
+            <div class="card-tags"><span class="tag">运动记录</span><span class="tag">骑行</span><span class="tag">14分钟</span></div>
+            <p>从城市北端沿河骑到入海口，全程固定机位与运动相机交替，重点展示夜间光照变化与路线中的补给点。</p>
+            <div class="card-meta"><span class="hot">热度 8.2</span><span class="score">评分 8.4</span><span>11-18 上线</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="旧书店 店主 访谈 城市文化">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-bookstore/400/300" alt="旧书店店主访谈封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">人物访谈</span>
+          </div>
+          <div class="card-body">
+            <h3>旧书店店主：在二楼卖了二十年书</h3>
+            <div class="card-tags"><span class="tag">人物纪实</span><span class="tag">城市文化</span><span class="tag">20分钟</span></div>
+            <p>书店位于老商住楼二楼，访谈围绕选书标准、熟客变化与电子阅读冲击展开，镜头同时记录店内陈设细节。</p>
+            <div class="card-meta"><span class="hot">热度 8.6</span><span class="score">评分 8.9</span><span>11-15 上线</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="城市漫游 第八期 滨江 傍晚">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yy57777-city08/400/300" alt="城市漫游第八期滨江傍晚封面" width="400" height="300" loading="lazy">
+            <span class="tag-float">城市漫游</span>
+          </div>
+          <div class="card-body">
+            <h3>城市漫游 第八期：滨江步道的傍晚</h3>
+            <div class="card-tags"><span class="tag">城市观察</span><span class="tag">纪实</span><span class="tag">11分钟</span></div>
+            <p>沿滨江步道从日落走到路灯亮起，记录散步者、慢跑者与钓鱼者的状态，旁白只保留环境声与简短字幕。</p>
+            <div class="card-meta"><span class="hot">热度 8.8</span><span class="score">评分 8.6</span><span>11-12 上线</span></div>
+          </div>
+        </article>
+
+        <div class="no-result" id="noResultFeatured">没有找到匹配的内容，试试「城市漫游」「深夜短片」等关键词。</div>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section class="section" id="latest">
+      <div class="section-head">
+        <h2>最新更新 <small>LATEST</small></h2>
+        <a class="more" href="/#featured">全部精选 →</a>
+      </div>
+      <p class="section-intro">过去 48 小时内上线的条目与状态变化，按时间倒序排列。</p>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">今天 09:30</span>
+          <div class="update-body">
+            <h3>城市漫游 第九期：老城区的十二时辰 <span class="update-badge">已上线</span></h3>
+            <p>全片 12 分钟，含导演手记与三条居民采访彩蛋，社区讨论区已同步开放。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今天 08:10</span>
+          <div class="update-body">
+            <h3>深夜放映室专题：午夜街区的十二种声音</h3>
+            <p>专题页面新增 4 组声音地图，支持按街区筛选，建议佩戴耳机观看。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 21:10</span>
+          <div class="update-body">
+            <h3>末班车手记：最后一班地铁的乘客</h3>
+            <p>导演评论音轨上线，补充了站台收音与后期混音的具体处理方式。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 18:45</span>
+          <div class="update-body">
+            <h3>菜市场早市：五点三十分的声音地图</h3>
+            <p>新增字幕版本，方便在通勤途中静音观看，同时保留完整环境声轨。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-24 14:20</span>
+          <div class="update-body">
+            <h3>天台放映员：一个人维护的露天影院</h3>
+            <p>访谈完整版上线，比预告多出 7 分钟关于选片标准的讨论。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-23 20:00</span>
+          <div class="update-body">
+            <h3>夜骑三十公里：沿河路线实拍</h3>
+            <p>新增路线文字说明与补给点标注，方便观众按图复现骑行。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-22 16:30</span>
+          <div class="update-body">
+            <h3>旧书店店主：在二楼卖了二十年书</h3>
+            <p>评论区开放提问，店主将在本周六晚集中回复选书与旧书修复问题。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-21 11:05</span>
+          <div class="update-body">
+            <h3>城市漫游 第八期：滨江步道的傍晚</h3>
+            <p>新增 4K 版本与章节跳转，可按「日落」「亮灯」两个时间点直接定位。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-20 09:40</span>
+          <div class="update-body">
+            <h3>深夜短片单元「便利店夜班」</h3>
+            <p>完成字幕校对并重新上线，此前因版权音乐替换短暂下架。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-19 22:15</span>
+          <div class="update-body">
+            <h3>社区共创计划第三期开放报名</h3>
+            <p>本期主题为「我窗外的十分钟」，提交截止 12 月 8 日，入选作品将获得专题推荐。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>分类导航 <small>CATEGORIES</small></h2>
+      </div>
+      <p class="section-intro">按内容形态与题材划分的八个入口，点击可直接定位到对应板块或专题。</p>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">城</span>
+          <strong>城市漫游</strong>
+          <span>街道与日常观察</span>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">夜</span>
+          <strong>深夜短片</strong>
+          <span>虚构叙事与低光影像</span>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">访</span>
+          <strong>创作者访谈</strong>
+          <span>导演与手艺人对话</span>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">声</span>
+          <strong>声音纪录</strong>
+          <span>环境声与现场录音</span>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">专</span>
+          <strong>专题策划</strong>
+          <span>月度主题合集</span>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">动</span>
+          <strong>城市运动</strong>
+          <span>骑行与夜跑记录</span>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <span class="cat-icon">创</span>
+          <strong>社区共创</strong>
+          <span>用户投稿与合辑</span>
+        </a>
+        <a class="cat-item" href="/#deep-read">
+          <span class="cat-icon">评</span>
+          <strong>观看方法论</strong>
+          <span>选片与比较依据</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section" id="deep-read">
+      <div class="section-head">
+        <h2>深度解析 <small>IN-DEPTH</small></h2>
+      </div>
+      <div class="deep-read">
+        <h3>城市影像与深夜短片：两种观看逻辑的差异</h3>
+        <p>
+          在 yy57777官网的内容体系里，<strong>城市漫游</strong>与<strong>深夜短片</strong>虽然都发生在夜间，但观看逻辑完全不同。前者属于观察型内容，镜头跟随环境推进，不预设戏剧冲突，观众更像是在一条街道上散步，注意力可以随时离开画面再从任意位置回来。后者则依赖叙事钩子与情绪累积，通常在前 90 秒内建立人物困境，后段依靠声音与光影收束。
+        </p>
+        <p>
+          判断一段城市影像是否值得投入时间，可以看三个具体维度：
+        </p>
+        <ul>
+          <li><strong>声音层次</strong>：是否保留现场环境声，而不是用配乐覆盖。城市漫游类条目如果只有音乐铺底，通常说明拍摄时收音条件不足。</li>
+          <li><strong>镜头停留时长</strong>：单镜头停留超过 8 秒的段落，往往包含创作者真正想展示的细节，值得放慢速度观看。</li>
+          <li><strong>人物介入程度</strong>：是纯旁观记录，还是有居民主动参与对话。介入越深，信息密度越高，但客观性也会变化。</li>
+        </ul>
+
+        <h3>系列条目与单篇条目的取舍</h3>
+        <p>
+          系列内容适合建立长期观看习惯，例如「城市漫游」每期 11 至 12 分钟，按周更新，适合安排在固定时间段。单篇条目则更适合一次性消费，例如「末班车手记」这类 18 分钟左右的短篇，情节完整，不需要前置知识。如果你时间有限，优先选择单篇；如果你希望获得连续的城市观察视角，则按系列顺序观看。
+        </p>
+        <p>
+          需要注意的是，系列条目之间存在隐性关联。第八期与第九期都出现过同一位修鞋摊主，如果跳过中间期数，可能会错过人物关系的变化。建议至少按「期数顺序」而非「热度排序」观看。
+        </p>
+
+        <h3>专题策划的观看顺序</h3>
+        <p>
+          「深夜放映室」这类专题通常包含 8 至 12 段较短内容，每段 6 至 9 分钟。专题页面会给出建议顺序，一般以声音类型分组，例如「交通声」「叫卖声」「施工声」。按组观看比随机点开更容易形成整体印象。若时间不允许全部看完，优先选择与自身生活经验接近的组别，理解成本更低。
+        </p>
+        <p>
+          专题内容通常配有文字说明，说明中会标注录音设备与采集时间。这些信息看似琐碎，但能帮助判断声音的真实程度。例如标注「双耳录音」的条目，用耳机收听时会有明显的方位感，外放则损失大部分信息。
+        </p>
+
+        <h3>社区共创内容的判断依据</h3>
+        <p>
+          社区投稿条目的质量差异较大，建议先看条目下方的「创作说明」与「设备信息」。说明完整、设备标注清晰的投稿，通常完成度更高。其次看评论区是否有创作者本人的回复，有回应的条目往往经过二次校对。最后参考社区评分，但不必把评分当作唯一标准，部分低分条目在声音采集上反而更有特点。
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>观看指南 <small>GUIDE</small></h2>
+      </div>
+      <p class="section-intro">从第一次接触到形成稳定观看习惯，可以按以下三个步骤推进，每一步都有具体的判断依据。</p>
+      <div class="path-steps">
+        <div class="path-step">
+          <span class="step-num">1</span>
+          <h3>先看单篇，确定口味</h3>
+          <p>从「末班车手记」或「菜市场早市」这类独立条目开始，单次 15 至 20 分钟，不需要追更。看完后记录自己更在意叙事还是环境声，这决定后续选择系列还是专题。</p>
+        </div>
+        <div class="path-step">
+          <span class="step-num">2</span>
+          <h3>再按系列顺序补全</h3>
+          <p>确认偏好后，进入「城市漫游」或「深夜放映室」按顺序观看。系列内容存在人物与地点的延续，跳看会损失部分信息。建议每周固定两期，避免一次性刷完。</p>
+        </div>
+        <div class="path-step">
+          <span class="step-num">3</span>
+          <h3>参与社区讨论与共创</h3>
+          <p>观看三到五期后，再进入评论区或共创计划。此时对内容风格已有判断，讨论更有针对性。共创投稿前建议先看两期入选作品，了解格式要求与时长限制。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>常见问题 <small>FAQ</small></h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>城市漫游系列一般多久更新一次？</summary>
+          <div class="faq-answer">目前保持每周一期，固定在周三或周六上线，遇专题月会调整为每两周一期。每期时长 11 至 12 分钟，更新当天会同步开放社区讨论区。</div>
+        </details>
+        <details>
+          <summary>深夜短片和城市漫游有什么区别？</summary>
+          <div class="faq-answer">深夜短片是虚构叙事，有完整人物与情节，单集 15 至 22 分钟；城市漫游是纪实观察，以街道与环境为主，不预设剧情，单集 11 至 12 分钟。前者适合专注观看，后者适合随时进出。</div>
+        </details>
+        <details>
+          <summary>第一次接触，从哪个条目开始看比较好？</summary>
+          <div class="faq-answer">建议从「末班车手记：最后一班地铁的乘客」或「菜市场早市：五点三十分的声音地图」开始。两部长短适中，风格差异明显，看完能快速判断自己更偏好叙事类还是观察类内容。</div>
+        </details>
+        <details>
+          <summary>声音纪录类条目需要戴耳机看吗？</summary>
+          <div class="faq-answer">建议佩戴耳机。声音纪录条目多采用双耳录音或现场收音，外放会损失方位感与低频细节。若在通勤途中不方便戴耳机，可选择带字幕的版本，但环境声体验会打折扣。</div>
+        </details>
+        <details>
+          <summary>社区共创投稿有什么具体要求？</summary>
+          <div class="faq-answer">第三期主题为「我窗外的十分钟」，要求单条 8 至 12 分钟，画面稳定，至少保留现场环境声。提交时需附 100 字以内的创作说明与拍摄设备信息，截止日期为 12 月 8 日。</div>
+        </details>
+        <details>
+          <summary>专题内容和普通条目在观看顺序上有什么不同？</summary>
+          <div class="faq-answer">专题按主题分组，建议按页面给出的分组顺序观看，例如「交通声」「叫卖声」等，便于形成整体印象。普通条目则按上线时间或期数顺序观看，系列内容不建议跳看。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>社区评论 <small>COMMENTS</small></h2>
+      </div>
+      <p class="section-intro">来自社区的真实讨论摘录，围绕具体条目与观看体验展开。</p>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">林</span><span class="nick">林间有风</span><span class="time">今天 10:12</span></div>
+          <p>老城区那期修鞋摊的镜头停了快十秒，一开始觉得慢，后来越看越有味道，这种耐心现在很少见了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">陈</span><span class="nick">陈默看片</span><span class="time">今天 09:48</span></div>
+          <p>末班车手记的声音做得很好，站台广播几乎盖过对白，但反而把那种疲惫感带出来了。建议戴耳机。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">苏</span><span class="nick">苏打水不加冰</span><span class="time">今天 08:30</span></div>
+          <p>天台放映员看哭了，不是因为煽情，是因为太日常了。邻居搬小板凳那段我看了两遍。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">周</span><span class="nick">周末不加班</span><span class="time">昨天 22:05</span></div>
+          <p>菜市场早市那期我外放的，效果一般，后来换耳机重看了一遍，完全不一样。摊主吆喝的空间感很强。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">何</span><span class="nick">何处是归途</span><span class="time">昨天 20:41</span></div>
+          <p>深夜放映室专题建议按分组看，我一开始随机点，后来按交通声那组重新看，整体感好很多。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">唐</span><span class="nick">唐吉诃德骑单车</span><span class="time">昨天 18:17</span></div>
+          <p>夜骑那期路线我照着骑了一次，补给点标注挺准的，就是有一段在修路，和视频里不一样了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">赵</span><span class="nick">赵四小姐的猫</span><span class="time">11-24 14:33</span></div>
+          <p>旧书店那期节奏偏慢，但店主讲选书标准那段很实在，不是那种空泛的文艺腔。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">吴</span><span class="nick">吴聊电影</span><span class="time">11-24 11:02</span></div>
+          <p>城市漫游第八期和第九期其实可以连着看，滨江和老城区是同一片区域的两面，对照着看更有意思。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">郑</span><span class="nick">郑在看</span><span class="time">11-23 21:26</span></div>
+          <p>社区共创第三期想投，但十分钟有点难凑，还在犹豫拍窗外的树还是拍楼下的早餐摊。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">孙</span><span class="nick">孙悟饭不吃葱</span><span class="time">11-23 16:50</span></div>
+          <p>末班车手记的导演音轨里讲站台收音用了两套设备，这个细节挺有意思，正片里听不出来。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">许</span><span class="nick">许愿池的硬币</span><span class="time">11-22 19:08</span></div>
+          <p>天台放映员的片单选择比想象中保守，但换个角度想，给邻居看的片子本来就不该太实验。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">冯</span><span class="nick">冯唐不姓冯</span><span class="time">11-22 13:44</span></div>
+          <p>深夜短片单元整体质量比城市漫游高，但城市漫游更耐看，属于会反复点开当背景音的那种。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">蒋</span><span class="nick">蒋道理</span><span class="time">11-21 22:19</span></div>
+          <p>声音纪录类条目更新频率可以再高一点，目前一个月才两三条，不太够听。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">沈</span><span class="nick">沈从文不写小说</span><span class="time">11-21 09:36</span></div>
+          <p>专题页的文字说明做得比正片还细，录音设备那栏我每次都看，能学到不少收音的东西。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">韩</span><span class="nick">韩梅梅的耳机</span><span class="time">11-20 20:55</span></div>
+          <p>菜市场那期如果可以出无字幕纯净版就好了，有些字幕挡住画面角落的细节。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">杨</span><span class="nick">杨枝甘露加冰</span><span class="time">11-20 15:12</span></div>
+          <p>整体不错，就是部分条目的简介写得比正片还长，建议精简，留点悬念反而更好。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>相关资讯 <small>NEWS</small></h2>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/yy57777-news01/600/400" alt="深夜放映室专题上线资讯配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-body">
+            <span class="news-date">2026-11-25</span>
+            <h3>「深夜放映室」专题上线，收录十二组午夜街区声音</h3>
+            <p>专题按声音类型分组，含交通声、叫卖声与施工声三组，每组配四部短片，支持按街区筛选。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/yy57777-news02/600/400" alt="城市漫游第九期更新资讯配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-body">
+            <span class="news-date">2026-11-24</span>
+            <h3>城市漫游第九期上线，聚焦老城区十二时辰</h3>
+            <p>本期首次采用三段居民采访穿插结构，导演手记同步发布，社区讨论区开放 72 小时。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/yy57777-news03/600/400" alt="社区共创计划第三期报名资讯配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-body">
+            <span class="news-date">2026-11-19</span>
+            <h3>社区共创计划第三期开放报名，主题定为我窗外的十分钟</h3>
+            <p>投稿要求单条 8 至 12 分钟，保留现场环境声，截止日期 12 月 8 日，入选作品将获专题推荐。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/yy57777-news04/600/400" alt="末班车手记导演音轨上线资讯配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-body">
+            <span class="news-date">2026-11-18</span>
+            <h3>末班车手记导演评论音轨上线，详解站台收音方案</h3>
+            <p>音轨中说明了两套收音设备的摆放位置与后期混音思路，正片与音轨可同步切换收听。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/yy57777-news05/600/400" alt="声音纪录单元新增字幕版本资讯配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-body">
+            <span class="news-date">2026-11-16</span>
+            <h3>声音纪录单元新增字幕版本，支持静音观看</h3>
+            <p>菜市场早市与滨江步道两期优先上线字幕版，环境声轨保留完整，方便通勤场景使用。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/yy57777-news06/600/400" alt="夜骑路线说明更新资讯配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-body">
+            <span class="news-date">2026-11-13</span>
+            <h3>夜骑三十公里更新路线说明，标注三处补给点</h3>
+            <p>说明中补充了沿河路线的施工路段与替代路径，建议出发前对照最新文字说明查看。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="reco">
+      <div class="section-head">
+        <h2>相关推荐 <small>RELATED</small></h2>
+      </div>
+      <p class="section-intro">按延伸方向整理的索引，适合在看完主推条目后继续探索。</p>
+      <div class="reco-tags">
+        <a href="/#featured">城市声音地图</a>
+        <a href="/#featured">低光摄影短片</a>
+        <a href="/#featured">露天放映记忆</a>
+        <a href="/#featured">菜市场纪录片</a>
+        <a href="/#featured">夜间骑行路线</a>
+        <a href="/#featured">旧书店人物志</a>
+        <a href="/#deep-read">系列观看顺序</a>
+        <a href="/#guide">耳机收听指南</a>
+      </div>
+    </section>
+
+    <!-- 11. 热门榜单 -->
+    <section class="section" id="rank">
+      <div class="section-head">
+        <h2>热门榜单 <small>RANKING</small></h2>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-num">1</span><span class="rank-name">城市漫游 第九期：老城区的十二时辰</span><span class="rank-tag">城市观察</span></div>
+        <div class="rank-item"><span class="rank-num">2</span><span class="rank-name">深夜放映室：午夜街区的十二种声音</span><span class="rank-tag">专题合集</span></div>
+        <div class="rank-item"><span class="rank-num">3</span><span class="rank-name">末班车手记：最后一班地铁的乘客</span><span class="rank-tag">虚构叙事</span></div>
+        <div class="rank-item"><span class="rank-num">4</span><span class="rank-name">天台放映员：一个人维护的露天影院</span><span class="rank-tag">人物访谈</span></div>
+        <div class="rank-item"><span class="rank-num">5</span><span class="rank-name">菜市场早市：五点三十分的声音地图</span><span class="rank-tag">声音纪录</span></div>
+        <div class="rank-item"><span class="rank-num">6</span><span class="rank-name">旧书店店主：在二楼卖了二十年书</span><span class="rank-tag">人物纪实</span></div>
+        <div class="rank-item"><span class="rank-num">7</span><span class="rank-name">夜骑三十公里：沿河路线实拍</span><span class="rank-tag">城市运动</span></div>
+        <div class="rank-item"><span class="rank-num">8</span><span class="rank-name">城市漫游 第八期：滨江步道的傍晚</span><span class="rank-tag">城市观察</span></div>
+        <div class="rank-item"><span class="rank-num">9</span><span class="rank-name">便利店夜班：收银台前的九分钟</span><span class="rank-tag">深夜短片</span></div>
+        <div class="rank-item"><span class="rank-num">10</span><span class="rank-name">我窗外的十分钟：社区共创精选</span><span class="rank-tag">社区共创</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="side-col" aria-label="辅助信息">
+    <div class="side-box">
+      <h2>本周更新速览</h2>
+      <ul class="side-list">
+        <li><a href="/#latest"><span class="idx">01</span>老城区十二时辰 · 已上线</a></li>
+        <li><a href="/#latest"><span class="idx">02</span>午夜街区专题 · 4 组新声音</a></li>
+        <li><a href="/#latest"><span class="idx">03</span>末班车手记 · 导演音轨</a></li>
+        <li><a href="/#latest"><span class="idx">04</span>菜市场早市 · 字幕版</a></li>
+        <li><a href="/#latest"><span class="idx">05</span>共创第三期 · 开放报名</a></li>
+      </ul>
+    </div>
+
+    <div class="side-box">
+      <h2>观看小贴士</h2>
+      <p class="side-note">
+        声音纪录类条目建议使用<strong>头戴式耳机</strong>，外放会损失方位感。城市漫游系列可按<strong>期数顺序</strong>观看，跳看会错过人物延续。专题内容优先按页面分组顺序，不建议随机点开。
+      </p>
+    </div>
+
+    <div class="side-box">
+      <h2>社区动态</h2>
+      <ul class="side-list">
+        <li><a href="/#comments"><span class="idx">·</span>林间有风 评论了老城区那期</a></li>
+        <li><a href="/#comments"><span class="idx">·</span>陈默看片 讨论了末班车音轨</a></li>
+        <li><a href="/#comments"><span class="idx">·</span>苏打水不加冰 发布了长评</a></li>
+        <li><a href="/#comments"><span class="idx">·</span>唐吉诃德骑单车 更新了路线反馈</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ===== 页尾 ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="2" y="2" width="36" height="36" rx="10" fill="none" stroke="#2f7cf6" stroke-width="1.5"/>
+            <path d="M13 12 L20 20 L13 28" fill="none" stroke="#2f7cf6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12 L28 20 L21 28" fill="none" stroke="#f5a623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-name">yy57777<em>官网</em></span>
+        </div>
+        <p>聚焦城市影像与深夜短片的视频内容品牌，每日更新精选片单，聚合社区讨论与专题策划。</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>内容栏目</h3>
+        <ul>
+          <li><a href="/#featured">精选内容</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#categories">分类导航</a></li>
+          <li><a href="/#rank">热门榜单</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>深度与指南</h3>
+        <ul>
+          <li><a href="/#deep-read">深度解析</a></li>
+          <li><a href="/#guide">观看指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#reco">相关推荐</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>社区与资讯</h3>
+        <ul>
+          <li><a href="/#comments">社区评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#overview">主题概览</a></li>
+          <li><a href="/#latest">更新动态</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 yy57777官网 · 内容与数据仅作示例展示，不构成任何承诺。</span>
+      <div class="fb-links">
+        <a href="/#overview">关于内容</a>
+        <a href="/#faq">使用说明</a>
+        <a href="/#comments">社区规范</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // 搜索：本地筛选精选卡片
+    var form = document.getElementById('searchForm');
+    var input = document.getElementById('searchInput');
+    var grid = document.getElementById('featuredGrid');
+    var noResult = document.getElementById('noResultFeatured');
+
+    if (!form || !input || !grid) return;
+
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+
+    function normalize(str) {
+      return (str || '').toLowerCase().replace(/\s+/g, '');
+    }
+
+    function filterCards() {
+      var q = normalize(input.value);
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        var text = normalize(card.getAttribute('data-search') + ' ' + card.textContent);
+        var match = !q || text.indexOf(q) !== -1;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      if (noResult) {
+        noResult.classList.toggle('show', visible === 0 && q.length > 0);
+      }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      filterCards();
+      var featured = document.getElementById('featured');
+      if (featured) {
+        featured.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    input.addEventListener('input', filterCards);
+  })();
+</script>
+
+</body>
+          </html>
